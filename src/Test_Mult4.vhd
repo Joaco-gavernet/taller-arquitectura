@@ -32,9 +32,9 @@ signal Result: Bit_vector(7 downto 0);
 
 begin		   
 	Clock(CLK, 7ns, 7ns); 	
-	A <= Convert(2,4); 
-	B <= Convert(9,4); 
+	A <= Convert(9,4); 
+	B <= Convert(2,4); 
 	STB <= '0', '1' after 30ns; 
 	mult: Mult4 port map(A,B,STB,CLK,Result,Done);
-	assert (Done = '0' or STB = '1') report "Simulacion finalizada. " severity Failure;  	
+	assert (Done = '0') report "Simulacion finalizada. " severity Note;
 end Test_Mult4;

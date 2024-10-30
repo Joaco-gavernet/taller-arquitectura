@@ -14,7 +14,7 @@
 --
 -------------------------------------------------------------------------------
 --
--- Description : 
+-- Description : The following program, implements a Mult4 module recycling past modules. 
 --
 -------------------------------------------------------------------------------
 
@@ -28,11 +28,13 @@ end Mult4;
 architecture Mult4 of Mult4 is
 
 	component ShiftN
-		port (CLK: in  Bit;  CLR: in  Bit; LD: in  Bit; SH: in  Bit;  DIR: in  Bit; D: in Bit_Vector; Q: out  Bit_Vector);
+		port (CLK, CLR, LD, SH, DIR: in  Bit; D: in Bit_Vector; 
+				Q: out  Bit_Vector);
 	end component;
 	
 	component Adder8
-		port (A, B: in Bit_Vector(7 downto 0); Cin: in Bit; Cout: out Bit; Sum: out Bit_Vector(7 downto 0));
+		port (A, B: in Bit_Vector(7 downto 0); Cin: in Bit; 
+				Cout: out Bit; Sum: out Bit_Vector(7 downto 0));
 	end component;
 	
 	component Controller
@@ -40,11 +42,12 @@ architecture Mult4 of Mult4 is
 	end component;
 	
 	component Accumulator
-	   port (D: in Bit_Vector(7 downto 0); Clk, Clr, LD: in Bit; Q: out Bit_Vector(7 downto 0));
+	   port (D: in Bit_Vector(7 downto 0); Clk, Clr, LD: in Bit; 
+	   			Q: out Bit_Vector(7 downto 0));
 	end component;
 	
 	signal QA, QB, Sum, Res, A8, B8: Bit_Vector(7 downto 0);
-	signal Init, Shift, Add, Stop, Trash: Bit;				
+	signal Init, Shift, Add, Stop: Bit;				
 	
 	function vec_NOR(input_vector: Bit_Vector) return Bit is
 	    variable result: Bit := '1';  -- Start with '1' (true for NOR)
@@ -61,8 +64,8 @@ begin
 	SR1: ShiftN port map(CLK, '0', INIT, Shift, '0', A8, QA); -- SRA
 	SR2: ShiftN port map(CLK, '0', INIT, Shift, '1', B8, QB); -- SRB
 	Stop <= vec_NOR(QA); 
-	Adder: Adder8 port map(Res, QB, '0', Trash, Sum);
+	Adder: Adder8 port map(Res, QB, '0', open, Sum);
 	ACC: Accumulator port map(Sum, CLK, Init, Add, Res); 
-	FSM_Controller: Controller port map(STB, CLK, QA(0), Stop, Init, Shift, Add, Done);
+	FSM: Controller port map(STB, CLK, QA(0), Stop, Init, Shift, Add, Done);
 	Result <= Res; 
 end Mult4;
