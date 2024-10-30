@@ -1,0 +1,60 @@
+[Project]
+Current Flow=Generic
+VCS=0
+version=4
+Current Config=compile
+[Configurations]
+compile=main
+[Library]
+main=.\main\main.lib
+[$LibMap$]
+main=.
+Active_lib=
+[Settings]
+FLOW_TYPE=HDL
+LANGUAGE=VHDL
+REFRESH_FLOW=1
+FLOWTOOLS=NONE
+FAMILY=
+[Files]
+/Test_Mult4.vhd=-1
+/DFF.vhd=-1
+/Test_DFF.vhd=-1
+/Latch8.vhd=-1
+/Test_Latch8.vhd=-1
+/Full_adder.vhd=-1
+/TestA_Full_adder.vhd=-1
+/TestB_Full_adder.vhd=-1
+/Adder8.vhd=-1
+/Test_Adder8.vhd=-1
+/ShiftN.vhd=-1
+/Test_ShiftN.vhd=-1
+/Controller.vhd=-1
+/Test_Controller.vhd=-1
+/Utils.vhd=-1
+/Test_Utils.vhd=-1
+/Mult4.vhd=-1
+/Accumulator.vhd=-1
+[Files.Data]
+.\src\Test_Mult4.vhd=VHDL Source Code
+.\src\DFF.vhd=VHDL Source Code
+.\src\Test_DFF.vhd=VHDL Source Code
+.\src\Latch8.vhd=VHDL Source Code
+.\src\Test_Latch8.vhd=VHDL Source Code
+.\src\Full_adder.vhd=VHDL Source Code
+.\src\TestA_Full_adder.vhd=VHDL Source Code
+.\src\TestB_Full_adder.vhd=VHDL Source Code
+.\src\Adder8.vhd=VHDL Source Code
+.\src\Test_Adder8.vhd=VHDL Source Code
+.\src\ShiftN.vhd=VHDL Source Code
+.\src\Test_ShiftN.vhd=VHDL Source Code
+.\src\Controller.vhd=VHDL Source Code
+.\src\Test_Controller.vhd=VHDL Source Code
+.\src\Utils.vhd=VHDL Source Code
+.\src\Test_Utils.vhd=VHDL Source Code
+.\src\Mult4.vhd=VHDL Source Code
+.\src\Accumulator.vhd=VHDL Source Code
+[HierarchyViewer]
+HierarchyInformation=mult4|mult4|0 test_mult4|test_mult4|0 test_shiftn|driver|0 test_utils|driver|0
+ShowHide=ShowTopLevel
+Selected=

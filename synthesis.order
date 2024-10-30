@@ -1,0 +1,16 @@
+i<>.\src\Test_DFF.vhd
+i<>.\src\test_DFF.vhd
+i<>.\src\DFF.vhd
+i<>.\src\Latch8.vhd
+i<>.\src\Test_Latch8.vhd
+i<>.\src\Full_adder.vhd
+i<>.\src\TestA_Full_adder.vhd
+i<>.\src\TestB_Full_adder.vhd
+i<>.\src\Adder8.vhd
+i<>.\src\Test_Adder8.vhd
+i<>.\src\Controller.vhd
+i<>.\src\Test_Mult4.vhd
+i<>.\src\ShiftN.vhd
+i<>.\src\Test_ShiftN.vhd
+i<>.\src\Mult4.vhd
+i<>.\src\Accumulator.vhd
